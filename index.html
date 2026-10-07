@@ -1,1 +1,1448 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SARA247 - Download App</title>
+<meta name="description" content="Download SARA247 app and continue to the official platform.">
+<meta name="theme-color" content="#090909">
+
+<!-- =========================================================
+     META PIXEL
+     ========================================================= -->
+<script>
+!function(f,b,e,v,n,t,s)
+{
+  if(f.fbq)return;
+  n=f.fbq=function(){
+    n.callMethod ?
+    n.callMethod.apply(n,arguments) : n.queue.push(arguments)
+  };
+
+  if(!f._fbq)f._fbq=n;
+  n.push=n;
+  n.loaded=!0;
+  n.version='2.0';
+  n.queue=[];
+
+  t=b.createElement(e);
+  t.async=!0;
+  t.src=v;
+
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s);
+}
+(window, document, 'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1452298376789897');
+fbq('track', 'PageView');
+</script>
+
+<noscript>
+<img
+  height="1"
+  width="1"
+  style="display:none"
+  src="https://www.facebook.com/tr?id=1452298376789897&ev=PageView&noscript=1"
+/>
+</noscript>
+
+<style>
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:
+    Inter,
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background:
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(190,0,0,.35),
+      transparent 40%
+    ),
+    #070707;
+
+  color:#fff;
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* =========================================================
+   VARIABLES
+   ========================================================= */
+
+:root{
+  --red:#ff1b1b;
+  --red-dark:#b40000;
+  --red-light:#ff4545;
+  --white:#ffffff;
+  --muted:#aaa;
+  --card:#111111;
+  --border:rgba(255,255,255,.09);
+  --shadow:0 20px 70px rgba(255,0,0,.18);
+}
+
+/* =========================================================
+   BACKGROUND EFFECTS
+   ========================================================= */
+
+.bg-glow{
+  position:fixed;
+  width:420px;
+  height:420px;
+  border-radius:50%;
+  background:rgba(255,0,0,.12);
+  filter:blur(100px);
+  pointer-events:none;
+  z-index:-2;
+}
+
+.bg-glow.one{
+  top:-180px;
+  left:-160px;
+}
+
+.bg-glow.two{
+  right:-200px;
+  top:35%;
+  background:rgba(180,0,0,.09);
+}
+
+.bg-glow.three{
+  left:-180px;
+  bottom:-180px;
+}
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+header{
+  padding:18px 0;
+  position:relative;
+  z-index:10;
+}
+
+.header-inner{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.brand{
+  font-size:30px;
+  font-weight:1000;
+  letter-spacing:-1.5px;
+  color:#fff;
+  text-decoration:none;
+}
+
+.brand span{
+  color:var(--red);
+}
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero{
+  padding:25px 0 45px;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:30px;
+  align-items:center;
+}
+
+.hero-copy{
+  text-align:center;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+
+  padding:8px 15px;
+
+  border:1px solid rgba(255,40,40,.35);
+  border-radius:999px;
+
+  background:rgba(255,0,0,.08);
+
+  color:#ff8585;
+  font-size:12px;
+  font-weight:800;
+
+  margin-bottom:18px;
+}
+
+.badge-dot{
+  width:7px;
+  height:7px;
+  background:#ff2222;
+  border-radius:50%;
+  box-shadow:0 0 12px #ff2222;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%,100%{
+    transform:scale(1);
+    opacity:1;
+  }
+
+  50%{
+    transform:scale(1.5);
+    opacity:.5;
+  }
+}
+
+.hero h1{
+  font-size:clamp(40px,10vw,76px);
+  line-height:.95;
+  font-weight:1000;
+  letter-spacing:-3px;
+  margin-bottom:18px;
+}
+
+.hero h1 span{
+  color:var(--red);
+  text-shadow:0 0 35px rgba(255,0,0,.3);
+}
+
+.hero-text{
+  color:#bdbdbd;
+  max-width:600px;
+  margin:0 auto 25px;
+  font-size:15px;
+  line-height:1.7;
+}
+
+/* =========================================================
+   CTA
+   ========================================================= */
+
+.cta-wrap{
+  display:flex;
+  justify-content:center;
+}
+
+.download-btn{
+  position:relative;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+
+  width:min(100%,380px);
+  min-height:62px;
+
+  padding:16px 28px;
+
+  border-radius:15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff3030,
+      #c90000
+    );
+
+  color:#fff;
+  text-decoration:none;
+
+  font-size:17px;
+  font-weight:900;
+
+  box-shadow:
+    0 15px 40px rgba(255,0,0,.28),
+    inset 0 1px 0 rgba(255,255,255,.25);
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+
+  overflow:hidden;
+}
+
+.download-btn::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:80%;
+  height:100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.35),
+      transparent
+    );
+
+  transform:skewX(-20deg);
+  animation:shine 3.5s infinite;
+}
+
+@keyframes shine{
+  0%{
+    left:-120%;
+  }
+
+  40%,100%{
+    left:150%;
+  }
+}
+
+.download-btn:hover{
+  transform:translateY(-3px);
+  box-shadow:
+    0 20px 55px rgba(255,0,0,.4);
+}
+
+.download-btn:active{
+  transform:scale(.97);
+}
+
+.download-icon{
+  width:25px;
+  height:25px;
+  border:2px solid #fff;
+  border-radius:7px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:15px;
+}
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.visual{
+  position:relative;
+  min-height:420px;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.visual::before{
+  content:"";
+  position:absolute;
+
+  width:270px;
+  height:270px;
+
+  border-radius:50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,0,0,.4),
+      rgba(255,0,0,.03) 60%,
+      transparent 70%
+    );
+
+  filter:blur(5px);
+}
+
+.phone{
+  position:relative;
+  width:230px;
+  height:455px;
+
+  border:7px solid #242424;
+  border-radius:36px;
+
+  background:#0d0d0d;
+
+  box-shadow:
+    0 35px 90px rgba(0,0,0,.8),
+    0 0 50px rgba(255,0,0,.2);
+
+  overflow:hidden;
+
+  transform:rotate(-3deg);
+  z-index:2;
+}
+
+.phone::before{
+  content:"";
+  position:absolute;
+
+  top:9px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:85px;
+  height:22px;
+
+  border-radius:20px;
+
+  background:#050505;
+  z-index:5;
+}
+
+.phone-screen{
+  width:100%;
+  height:100%;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,0,0,.4),
+      transparent 35%
+    ),
+    linear-gradient(
+      160deg,
+      #1c0000,
+      #090909 55%,
+      #120000
+    );
+
+  padding:55px 16px 18px;
+}
+
+.phone-logo{
+  text-align:center;
+  font-size:28px;
+  font-weight:1000;
+  letter-spacing:-1px;
+}
+
+.phone-logo span{
+  color:#ff2222;
+}
+
+.phone-tag{
+  text-align:center;
+  color:#aaa;
+  font-size:9px;
+  margin-top:5px;
+}
+
+.phone-card{
+  margin-top:28px;
+
+  border-radius:18px;
+
+  padding:18px 14px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ed1717,
+      #700000
+    );
+
+  box-shadow:
+    0 15px 35px rgba(255,0,0,.2);
+}
+
+.phone-card .small{
+  font-size:9px;
+  opacity:.8;
+}
+
+.phone-card h3{
+  font-size:22px;
+  margin:5px 0 3px;
+}
+
+.phone-card p{
+  font-size:9px;
+  color:#eee;
+}
+
+.phone-buttons{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:18px;
+}
+
+.phone-buttons div{
+  padding:10px 5px;
+  border-radius:9px;
+  text-align:center;
+  font-size:9px;
+  font-weight:800;
+  background:#1d1d1d;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.phone-bottom{
+  position:absolute;
+  left:16px;
+  right:16px;
+  bottom:17px;
+
+  height:35px;
+
+  border-radius:12px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff2020,
+      #aa0000
+    );
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:10px;
+  font-weight:900;
+}
+
+/* Floating cards */
+
+.float-card{
+  position:absolute;
+  z-index:4;
+
+  padding:13px 16px;
+
+  border-radius:14px;
+
+  background:rgba(20,20,20,.88);
+  border:1px solid rgba(255,255,255,.1);
+
+  box-shadow:0 15px 40px rgba(0,0,0,.45);
+
+  backdrop-filter:blur(10px);
+}
+
+.float-card strong{
+  display:block;
+  font-size:16px;
+}
+
+.float-card span{
+  display:block;
+  color:#888;
+  font-size:9px;
+  margin-top:3px;
+}
+
+.float-one{
+  top:75px;
+  left:2%;
+  animation:float1 4s ease-in-out infinite;
+}
+
+.float-two{
+  right:2%;
+  bottom:70px;
+  animation:float2 4.5s ease-in-out infinite;
+}
+
+@keyframes float1{
+  0%,100%{
+    transform:translateY(0) rotate(-3deg);
+  }
+
+  50%{
+    transform:translateY(-12px) rotate(-3deg);
+  }
+}
+
+@keyframes float2{
+  0%,100%{
+    transform:translateY(0) rotate(3deg);
+  }
+
+  50%{
+    transform:translateY(10px) rotate(3deg);
+  }
+}
+
+/* =========================================================
+   BANNER
+   ========================================================= */
+
+.banner-section{
+  padding:10px 0 55px;
+}
+
+.banner-box{
+  position:relative;
+
+  border-radius:22px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(255,255,255,.1);
+
+  background:#111;
+
+  box-shadow:var(--shadow);
+}
+
+.banner-box img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+/*
+ If banner.png is not available, this fallback design appears.
+*/
+
+.banner-fallback{
+  min-height:250px;
+
+  padding:35px 20px;
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(255,0,0,.45),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      #260000,
+      #090909
+    );
+}
+
+.banner-fallback .big-logo{
+  font-size:clamp(42px,12vw,90px);
+  font-weight:1000;
+}
+
+.banner-fallback .big-logo span{
+  color:#ff2020;
+}
+
+.banner-fallback h2{
+  margin-top:5px;
+  font-size:clamp(22px,5vw,42px);
+}
+
+.banner-fallback p{
+  color:#aaa;
+  margin-top:10px;
+  font-size:13px;
+}
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.features{
+  padding:0 0 55px;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.section-title .mini{
+  color:#ff3131;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.section-title h2{
+  font-size:30px;
+  margin-top:8px;
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+}
+
+.feature{
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.06),
+      rgba(255,255,255,.025)
+    );
+
+  border:1px solid var(--border);
+  border-radius:17px;
+
+  padding:20px 15px;
+
+  min-height:135px;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease;
+}
+
+.feature:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,30,30,.4);
+}
+
+.feature-icon{
+  width:40px;
+  height:40px;
+
+  border-radius:12px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:rgba(255,0,0,.12);
+  color:#ff3030;
+
+  font-size:19px;
+
+  margin-bottom:12px;
+}
+
+.feature h3{
+  font-size:14px;
+  margin-bottom:6px;
+}
+
+.feature p{
+  color:#8f8f8f;
+  font-size:11px;
+  line-height:1.5;
+}
+
+/* =========================================================
+   DOWNLOAD SECTION
+   ========================================================= */
+
+.download-section{
+  padding:10px 0 65px;
+}
+
+.download-card{
+  position:relative;
+  overflow:hidden;
+
+  padding:35px 20px;
+
+  border-radius:25px;
+
+  text-align:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255,0,0,.25),
+      transparent 55%
+    ),
+    #111;
+
+  border:1px solid rgba(255,255,255,.09);
+
+  box-shadow:var(--shadow);
+}
+
+.download-card h2{
+  font-size:29px;
+  margin-bottom:10px;
+}
+
+.download-card p{
+  color:#999;
+  font-size:13px;
+  line-height:1.6;
+
+  max-width:550px;
+  margin:0 auto 22px;
+}
+
+/* =========================================================
+   NOTICE
+   ========================================================= */
+
+.notice{
+  padding:0 0 35px;
+}
+
+.notice-box{
+  padding:16px;
+
+  border-radius:14px;
+
+  background:#0d0d0d;
+  border:1px solid rgba(255,255,255,.07);
+
+  color:#777;
+
+  font-size:10px;
+  line-height:1.7;
+
+  text-align:center;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer{
+  border-top:1px solid rgba(255,255,255,.07);
+
+  padding:25px 0 35px;
+
+  text-align:center;
+
+  color:#666;
+
+  font-size:10px;
+}
+
+footer strong{
+  color:#999;
+}
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media(min-width:768px){
+
+  header{
+    padding:25px 0;
+  }
+
+  .hero{
+    padding:55px 0 70px;
+  }
+
+  .hero-grid{
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+  }
+
+  .hero-copy{
+    text-align:left;
+  }
+
+  .hero-text{
+    margin-left:0;
+  }
+
+  .cta-wrap{
+    justify-content:flex-start;
+  }
+
+  .visual{
+    min-height:560px;
+  }
+
+  .phone{
+    width:270px;
+    height:530px;
+  }
+
+  .float-one{
+    left:4%;
+    top:90px;
+  }
+
+  .float-two{
+    right:4%;
+    bottom:95px;
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(4,1fr);
+  }
+
+  .feature{
+    min-height:170px;
+  }
+
+}
+
+/* =========================================================
+   LARGE DESKTOP
+   ========================================================= */
+
+@media(min-width:1100px){
+
+  .hero h1{
+    font-size:82px;
+  }
+
+  .hero-text{
+    font-size:16px;
+  }
+
+  .banner-section{
+    padding-top:20px;
+  }
+
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media(max-width:380px){
+
+  .hero h1{
+    font-size:39px;
+  }
+
+  .phone{
+    width:205px;
+    height:415px;
+  }
+
+  .visual{
+    min-height:410px;
+  }
+
+  .float-card{
+    padding:10px 12px;
+  }
+
+  .feature{
+    padding:16px 12px;
+  }
+
+  .download-btn{
+    font-size:15px;
+  }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg-glow one"></div>
+<div class="bg-glow two"></div>
+<div class="bg-glow three"></div>
+
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+
+<header>
+  <div class="container">
+    <div class="header-inner">
+      <a href="#" class="brand">
+        SARA<span>247</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+
+<main>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-grid">
+
+      <!-- LEFT -->
+
+      <div class="hero-copy">
+
+        <div class="badge">
+          <span class="badge-dot"></span>
+          OFFICIAL APP EXPERIENCE
+        </div>
+
+        <h1>
+          Welcome to
+          <span>SARA247</span>
+        </h1>
+
+        <p class="hero-text">
+          Experience the SARA247 platform with a fast,
+          mobile-friendly interface designed for a smooth
+          experience on your device.
+        </p>
+
+        <div class="cta-wrap">
+
+          <a
+            href="sara247.apk"
+            class="download-btn download-trigger"
+            download="sara247.apk"
+            id="downloadTop"
+          >
+            <span class="download-icon">↓</span>
+            <span>DOWNLOAD APP</span>
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT VISUAL -->
+
+      <div class="visual">
+
+        <div class="float-card float-one">
+          <strong>24/7</strong>
+          <span>ACCESS</span>
+        </div>
+
+        <div class="float-card float-two">
+          <strong>FAST</strong>
+          <span>MOBILE EXPERIENCE</span>
+        </div>
+
+        <div class="phone">
+
+          <div class="phone-screen">
+
+            <div class="phone-logo">
+              SARA<span>247</span>
+            </div>
+
+            <div class="phone-tag">
+              ANYTIME • ANYWHERE • 24/7
+            </div>
+
+            <div class="phone-card">
+
+              <div class="small">
+                WELCOME
+              </div>
+
+              <h3>
+                SARA247
+              </h3>
+
+              <p>
+                Your mobile experience starts here.
+              </p>
+
+            </div>
+
+            <div class="phone-buttons">
+
+              <div>
+                QUICK
+              </div>
+
+              <div>
+                EASY
+              </div>
+
+              <div>
+                MOBILE
+              </div>
+
+              <div>
+                24/7
+              </div>
+
+            </div>
+
+            <div class="phone-bottom">
+              DOWNLOAD NOW
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     USER BANNER
+     
+     If you have your banner image:
+     rename it to banner.png and put it beside this HTML.
+     
+     The fallback remains visible if banner.png is missing.
+     ========================================================= -->
+
+<section class="banner-section">
+
+  <div class="container">
+
+    <div class="banner-box">
+
+      <img
+        src="banner.png"
+        alt="SARA247"
+        id="mainBanner"
+        onerror="this.style.display='none';document.getElementById('bannerFallback').style.display='flex';"
+      >
+
+      <div
+        class="banner-fallback"
+        id="bannerFallback"
+        style="display:none;"
+      >
+
+        <div class="big-logo">
+          SARA<span>247</span>
+        </div>
+
+        <h2>
+          PLAY SMART
+        </h2>
+
+        <p>
+          ANYTIME • ANYWHERE • 24/7
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     FEATURES
+     ========================================================= -->
+
+<section class="features">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <div class="mini">
+        WHY SARA247
+      </div>
+
+      <h2>
+        Built for Mobile
+      </h2>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          ⚡
+        </div>
+
+        <h3>
+          Fast Experience
+        </h3>
+
+        <p>
+          Designed for quick and smooth mobile navigation.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          📱
+        </div>
+
+        <h3>
+          Mobile Friendly
+        </h3>
+
+        <p>
+          Optimized layout for phones and smaller screens.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          🔒
+        </div>
+
+        <h3>
+          Simple Access
+        </h3>
+
+        <p>
+          Easy-to-understand interface and clear navigation.
+        </p>
+
+      </div>
+
+
+      <div class="feature">
+
+        <div class="feature-icon">
+          24
+        </div>
+
+        <h3>
+          Anytime Access
+        </h3>
+
+        <p>
+          Designed around an always-available mobile experience.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     DOWNLOAD SECTION
+     ========================================================= -->
+
+<section class="download-section">
+
+  <div class="container">
+
+    <div class="download-card">
+
+      <h2>
+        Ready to Continue?
+      </h2>
+
+      <p>
+        Download the SARA247 Android application
+        and continue from your mobile device.
+      </p>
+
+      <div class="cta-wrap">
+
+        <a
+          href="sara247.apk"
+          class="download-btn download-trigger"
+          download="sara247.apk"
+          id="downloadBottom"
+        >
+          <span class="download-icon">↓</span>
+          <span>DOWNLOAD SARA247</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     NOTICE
+     ========================================================= -->
+
+<section class="notice">
+
+  <div class="container">
+
+    <div class="notice-box">
+
+      Please download applications only from sources you trust.
+      Android may ask you to allow installation from your browser
+      or other sources depending on your device settings.
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+
+<footer>
+
+  <div class="container">
+
+    <strong>SARA247</strong>
+
+    <br><br>
+
+    © <span id="year"></span> SARA247. All rights reserved.
+
+  </div>
+
+</footer>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
+<script>
+
+/* =========================================================
+   YEAR
+   ========================================================= */
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+
+/* =========================================================
+   META DOWNLOAD EVENT
+
+   Pixel:
+   1452298376789897
+
+   Event:
+   Download
+   ========================================================= */
+
+const downloadButtons =
+  document.querySelectorAll(".download-trigger");
+
+downloadButtons.forEach(function(button){
+
+  button.addEventListener("click", function(event){
+
+    /*
+      Keep the browser's native APK download behavior.
+      We only send the Meta event before it starts.
+    */
+
+    try{
+
+      if(typeof window.fbq === "function"){
+
+        window.fbq(
+          "track",
+          "Download",
+          {
+            content_name:"SARA247 APK",
+            content_type:"application",
+            file_name:"sara247.apk"
+          }
+        );
+
+      }
+
+    }catch(error){
+
+      console.log(
+        "Meta Pixel event error:",
+        error
+      );
+
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   OPTIONAL: PRELOAD APK
+
+   This only prepares the browser connection.
+   It does NOT automatically download the APK.
+   ========================================================= */
+
+const apkPath = "sara247.apk";
+
+
+/* =========================================================
+   PREVENT ACCIDENTAL DOUBLE CLICK
+   ========================================================= */
+
+let clicked = false;
+
+downloadButtons.forEach(function(button){
+
+  button.addEventListener("click", function(){
+
+    if(clicked){
+      return;
+    }
+
+    clicked = true;
+
+    setTimeout(function(){
+
+      clicked = false;
+
+    },1500);
+
+  });
+
+});
+
+</script>
+
+</body>
+</html>
+```
+
